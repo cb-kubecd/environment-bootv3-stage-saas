@@ -5,7 +5,7 @@ apps:
 - name: jenkins-x/lighthouse
 - name: jenkins-x/tekton
 - name: dev/v2-nodey2
-  version: 0.0.12
+  version: 0.0.14
 repositories:
 - name: dev
   url: http://bucketrepo-jx.cbjx-mustangvine.staging-jxaas.live/bucketrepo/charts/
