@@ -1,0 +1,9 @@
+aliases:
+- jstrachan
+- cloudbees-ci-cd-staging[bot]
+best-approvers:
+- jstrachan
+- cloudbees-ci-cd-staging[bot]
+best-reviewers:
+- jstrachan
+- cloudbees-ci-cd-staging[bot]
