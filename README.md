@@ -1,4 +1,4 @@
-# Environment git repository
+# Remote Environment git repository
 
 this git repository stores:
  
