@@ -1,4 +1,6 @@
 approvers:
 - jstrachan
+- cloudbees-ci-cd-staging[bot]
 reviewers:
 - jstrachan
+- cloudbees-ci-cd-staging[bot]
