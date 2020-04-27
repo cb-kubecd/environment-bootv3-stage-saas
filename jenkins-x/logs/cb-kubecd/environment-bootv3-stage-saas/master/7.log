@@ -1,0 +1,462 @@
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-zhr25-7[0m stage [32mrelease[0m and container [32mstep-credential-initializer-kpllx[0m
+{"level":"warn","ts":1587977161.009511,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1587977161.0101495,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-zhr25-7[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-nv7d2[0m
+{"level":"warn","ts":1587977161.5949495,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1587977161.5961099,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-zhr25-7[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-zhr25-7[0m stage [32mrelease[0m and container [32mstep-git-source-cb-kubecd-environment-bootv3-st-zhr25-58wjk[0m
+{"level":"warn","ts":1587977169.7118654,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1587977170.9801295,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/environment-bootv3-stage-saas.git @ v0.0.7 in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-zhr25-7[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:adbeaffcd64190ca3ebf7cc9760ecb5302040da1
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-zhr25-7[0m stage [32mrelease[0m and container [32mstep-verify-secrets[0m
+Installing plugin helm version 3.2.0 for command ** helm from https://get.helm.sh/helm-v3.2.0-linux-amd64.tar.gz
+created directory /secrets/**-boot
+loaded Secrets from: Google Secret Manager for secret bootv3-stage-saas-boot-secret
+exported Secrets to file: /secrets/**-boot/secrets.yaml
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-zhr25-7[0m stage [32mrelease[0m and container [32mstep-validate-git[0m
+Git configured for user: jenkins-x-bot and email jenkins-x@googlegroups.com
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-zhr25-7[0m stage [32mrelease[0m and container [32mstep-verify-preinstall[0m
+no need to reconnect to cluster
+writing the following to the OWNERS file for the development environment repository:
+approvers:
+- jstrachan
+reviewers:
+- jstrachan
+WARNING: TLS is not enabled so your webhooks will be called using HTTP. This means your webhook secret will be sent to your cluster in the clear. See https://jenkins-x.io/docs/getting-started/setup/boot/#ingress for more information
+Verifying the kubernetes cluster before we try to boot Jenkins X in namespace: **
+Trying to lazily create any missing resources to get the current cluster ready to boot Jenkins X
+Verifying Ingress...
+
+Using namespace '**' from context named '' on server ''.
+
+Verifying Storage...
+WARNING: Your requirements have not enabled cloud storage for logs - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for reports - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for repository - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for backup - we recommend enabling this for kubernetes provider gke
+Storage configuration looks good
+
+verified there is a ConfigMap config in namespace **
+verified there is a ConfigMap plugins in namespace **
+Cluster looks good, you are ready to '** boot' now!
+
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-zhr25-7[0m stage [32mrelease[0m and container [32mstep-generate-helmfile[0m
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-zhr25-7[0m stage [32mrelease[0m and container [32mstep-helmfile-system-diff[0m
+Adding repo dev http://bucketrepo-**.cb**-mustangvine.staging-**aas.live/bucketrepo/charts/
+"dev" has been added to your repositories
+
+Adding repo **-labs gs://jenkinsxio-labs-private/charts
+"**-labs" has been added to your repositories
+
+Adding repo stable https://kubernetes-charts.storage.googleapis.com
+"stable" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "**-labs" chart repository
+...Successfully got an update from the "dev" chart repository
+...Successfully got an update from the "stable" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Comparing release=jenkins-x-crds, chart=**-labs/jenkins-x-crds
+Comparing release=nginx-ingress, chart=stable/nginx-ingress
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-zhr25-7[0m stage [32mrelease[0m and container [32mstep-helmfile-system[0m
+Adding repo dev http://bucketrepo-**.cb**-mustangvine.staging-**aas.live/bucketrepo/charts/
+"dev" has been added to your repositories
+
+Adding repo **-labs gs://jenkinsxio-labs-private/charts
+"**-labs" has been added to your repositories
+
+Adding repo stable https://kubernetes-charts.storage.googleapis.com
+"stable" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "dev" chart repository
+...Successfully got an update from the "**-labs" chart repository
+...Successfully got an update from the "stable" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Affected releases are:
+  jenkins-x-crds (**-labs/jenkins-x-crds) UPDATED
+  nginx-ingress (stable/nginx-ingress) UPDATED
+
+Upgrading release=jenkins-x-crds, chart=**-labs/jenkins-x-crds
+Upgrading release=nginx-ingress, chart=stable/nginx-ingress
+Release "nginx-ingress" has been upgraded. Happy Helming!
+NAME: nginx-ingress
+LAST DEPLOYED: Mon Apr 27 08:46:42 2020
+NAMESPACE: nginx
+STATUS: deployed
+REVISION: 24
+TEST SUITE: None
+NOTES:
+The nginx-ingress controller has been installed.
+It may take a few minutes for the LoadBalancer IP to be available.
+You can watch the status by running 'kubectl --namespace nginx get services -o wide -w nginx-ingress-controller'
+
+An example Ingress that makes use of the controller:
+
+  apiVersion: extensions/v1beta1
+Listing releases matching ^nginx-ingress$
+  kind: Ingress
+  metadata:
+    annotations:
+      kubernetes.io/ingress.class: nginx
+    name: example
+    namespace: foo
+  spec:
+    rules:
+      - host: www.example.com
+        http:
+          paths:
+            - backend:
+                serviceName: exampleService
+                servicePort: 80
+              path: /
+    # This section is only required if TLS is to be enabled for the Ingress
+    tls:
+        - hosts:
+            - www.example.com
+          secretName: example-tls
+
+If TLS is enabled for the Ingress, a Secret containing the certificate and key must also be provided:
+
+  apiVersion: v1
+  kind: Secret
+  metadata:
+    name: example-tls
+    namespace: foo
+  data:
+    tls.crt: <base64 encoded cert>
+    tls.key: <base64 encoded key>
+  type: kubernetes.io/tls
+
+nginx-ingress	nginx    	24      	2020-04-27 08:46:42.747908084 +0000 UTC	deployed	nginx-ingress-1.34.2	0.30.0     
+
+Release "jenkins-x-crds" has been upgraded. Happy Helming!
+NAME: jenkins-x-crds
+LAST DEPLOYED: Mon Apr 27 08:46:45 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 13
+TEST SUITE: None
+
+Listing releases matching ^jenkins-x-crds$
+jenkins-x-crds	**       	13      	2020-04-27 08:46:45.705524354 +0000 UTC	deployed	jenkins-x-crds-0.0.1	0.0.1      
+
+
+UPDATED RELEASES:
+NAME             CHART                    VERSION
+nginx-ingress    stable/nginx-ingress      1.34.2
+jenkins-x-crds   **-labs/jenkins-x-crds     0.0.1
+
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-zhr25-7[0m stage [32mrelease[0m and container [32mstep-verify-ingress[0m
+Waiting to find the external host name of the ingress controller Service in namespace nginx with name nginx-ingress-controller
+No domain flag provided so using default 34.76.102.116.nip.io to generate Ingress rules
+defaulting the domain to 34.76.102.116.nip.io and modified /workspace/source/**-requirements.yml
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-zhr25-7[0m stage [32mrelease[0m and container [32mstep-helm-label-repositories[0m
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-zhr25-7[0m stage [32mrelease[0m and container [32mstep-helmfile-apps-diff[0m
+Adding repo dev http://bucketrepo-**.cb**-mustangvine.staging-**aas.live/bucketrepo/charts/
+"dev" has been added to your repositories
+
+Adding repo jenkins-x http://chartmuseum.jenkins-x.io
+"jenkins-x" has been added to your repositories
+
+Adding repo jenkins-x https://storage.googleapis.com/chartmuseum.jenkins-x.io
+"jenkins-x" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "dev" chart repository
+...Successfully got an update from the "**-labs" chart repository
+...Successfully got an update from the "stable" chart repository
+...Successfully got an update from the "jenkins-x" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Comparing release=tekton, chart=jenkins-x/tekton
+Comparing release=lighthouse, chart=jenkins-x/lighthouse
+Comparing release=**boot-helmfile-resources, chart=jenkins-x/**boot-helmfile-resources
+Comparing release=v2-nodey2, chart=dev/v2-nodey2
+********************
+
+	Release was not present in Helm.  Diff will show entire contents as new.
+
+********************
+[33m**, v2-nodey2, Service (v1) has been added:[0m
+[31m- [0m
+[32m+ # Source: v2-nodey2/templates/service.yaml[0m
+[32m+ apiVersion: v1[0m
+[32m+ kind: Service[0m
+[32m+ metadata:[0m
+[32m+   name: v2-nodey2[0m
+[32m+   labels:[0m
+[32m+     chart: "v2-nodey2-0.0.16"[0m
+[32m+   annotations:[0m
+[32m+     fabric8.io/expose: "true"[0m
+[32m+     fabric8.io/ingress.annotations: 'kubernetes.io/ingress.class: nginx'[0m
+[32m+ spec:[0m
+[32m+   type: ClusterIP[0m
+[32m+   ports:[0m
+[32m+   - port: 80[0m
+[32m+     targetPort: 8080[0m
+[32m+     protocol: TCP[0m
+[32m+     name: http[0m
+[32m+   selector:[0m
+[32m+     app: v2-nodey2-v2-nodey2[0m
+[33m**, v2-nodey2-v2-nodey2, Deployment (apps) has been added:[0m
+[31m- [0m
+[32m+ # Source: v2-nodey2/templates/deployment.yaml[0m
+[32m+ apiVersion: apps/v1[0m
+[32m+ kind: Deployment[0m
+[32m+ metadata:[0m
+[32m+   name: v2-nodey2-v2-nodey2[0m
+[32m+   labels:[0m
+[32m+     draft: draft-app[0m
+[32m+     chart: "v2-nodey2-0.0.16"[0m
+[32m+ spec:[0m
+[32m+   selector:[0m
+[32m+     matchLabels:[0m
+[32m+       app: v2-nodey2-v2-nodey2[0m
+[32m+   replicas: 1[0m
+[32m+   template:[0m
+[32m+     metadata:[0m
+[32m+       labels:[0m
+[32m+         draft: draft-app[0m
+[32m+         app: v2-nodey2-v2-nodey2[0m
+[32m+     spec:[0m
+[32m+       containers:[0m
+[32m+       - name: v2-nodey2[0m
+[32m+         image: "gcr.io/cb**-mustangvine/v2-nodey2:0.0.16"[0m
+[32m+         imagePullPolicy: IfNotPresent[0m
+[32m+         env:[0m
+[32m+         envFrom:[0m
+[32m+           null[0m
+[32m+         ports:[0m
+[32m+         - containerPort: 8080[0m
+[32m+         livenessProbe:[0m
+[32m+           httpGet:[0m
+[32m+             path: /[0m
+[32m+             port: 8080[0m
+[32m+           initialDelaySeconds: 60[0m
+[32m+           periodSeconds: 10[0m
+[32m+           successThreshold: 1[0m
+[32m+           timeoutSeconds: 1[0m
+[32m+         readinessProbe:[0m
+[32m+           httpGet:[0m
+[32m+             path: /[0m
+[32m+             port: 8080[0m
+[32m+           periodSeconds: 10[0m
+[32m+           successThreshold: 1[0m
+[32m+           timeoutSeconds: 1[0m
+[32m+         resources:[0m
+[32m+             limits:[0m
+[32m+               cpu: 400m[0m
+[32m+               memory: 256Mi[0m
+[32m+             requests:[0m
+[32m+               cpu: 200m[0m
+[32m+               memory: 128Mi[0m
+[32m+       terminationGracePeriodSeconds:[0m
+[33m**, v2-nodey2, Ingress (extensions) has been added:[0m
+[31m- [0m
+[32m+ # Source: v2-nodey2/templates/ingress.yaml[0m
+[32m+ apiVersion: extensions/v1beta1[0m
+[32m+ kind: Ingress[0m
+[32m+ metadata:[0m
+[32m+   annotations:[0m
+[32m+     kubernetes.io/ingress.class: nginx[0m
+[32m+   name: v2-nodey2[0m
+[32m+ spec:[0m
+[32m+   rules:[0m
+[32m+   - host: v2-nodey2-**.34.76.102.116.nip.io[0m
+[32m+     http:[0m
+[32m+       paths:[0m
+[32m+       - backend:[0m
+[32m+           serviceName: v2-nodey2[0m
+[32m+           servicePort: 80[0m
+[33m**, v2-nodey2-0.0.16, Release (jenkins.io) has been added:[0m
+[31m- [0m
+[32m+ # Source: v2-nodey2/templates/release.yaml[0m
+[32m+ apiVersion: jenkins.io/v1[0m
+[32m+ kind: Release[0m
+[32m+ metadata:[0m
+[32m+   creationTimestamp: "2020-04-27T08:32:31Z"[0m
+[32m+   deletionTimestamp: null[0m
+[32m+   name: 'v2-nodey2-0.0.16'[0m
+[32m+ spec:[0m
+[32m+   commits:[0m
+[32m+   - author: **[0m
+[32m+     branch: master[0m
+[32m+     committer: **[0m
+[32m+     message: Update index.html[0m
+[32m+     sha: f0e2e7e01bfe892009f633b404703924770d770e[0m
+[32m+   gitCloneUrl: https://github.com/jstrachan/v2-nodey2.git[0m
+[32m+   gitHttpUrl: https://github.com/jstrachan/v2-nodey2[0m
+[32m+   gitOwner: jstrachan[0m
+[32m+   gitRepository: v2-nodey2[0m
+[32m+   name: 'v2-nodey2'[0m
+[32m+   releaseNotesURL: https://github.com/jstrachan/v2-nodey2/releases/tag/v0.0.16[0m
+[32m+   version: v0.0.16[0m
+[32m+ status: **[0m
+
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-zhr25-7[0m stage [32mrelease[0m and container [32mstep-helmfile-apps[0m
+Adding repo dev http://bucketrepo-**.cb**-mustangvine.staging-**aas.live/bucketrepo/charts/
+"dev" has been added to your repositories
+
+Adding repo jenkins-x http://chartmuseum.jenkins-x.io
+"jenkins-x" has been added to your repositories
+
+Adding repo jenkins-x https://storage.googleapis.com/chartmuseum.jenkins-x.io
+"jenkins-x" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "dev" chart repository
+...Successfully got an update from the "**-labs" chart repository
+...Successfully got an update from the "stable" chart repository
+...Successfully got an update from the "jenkins-x" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Affected releases are:
+  **boot-helmfile-resources (jenkins-x/**boot-helmfile-resources) UPDATED
+  lighthouse (jenkins-x/lighthouse) UPDATED
+  tekton (jenkins-x/tekton) UPDATED
+  v2-nodey2 (dev/v2-nodey2) UPDATED
+
+Upgrading release=**boot-helmfile-resources, chart=jenkins-x/**boot-helmfile-resources
+Upgrading release=tekton, chart=jenkins-x/tekton
+Upgrading release=v2-nodey2, chart=dev/v2-nodey2
+Upgrading release=lighthouse, chart=jenkins-x/lighthouse
+Listing releases matching ^lighthouse$
+Release "lighthouse" has been upgraded. Happy Helming!
+NAME: lighthouse
+LAST DEPLOYED: Mon Apr 27 08:47:25 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 13
+TEST SUITE: None
+NOTES:
+Get the application URL by running these commands:
+
+kubectl get ingress lighthouse-lighthouse
+
+Release "tekton" has been upgraded. Happy Helming!
+NAME: tekton
+LAST DEPLOYED: Mon Apr 27 08:47:26 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 13
+TEST SUITE: None
+NOTES:
+Tekton Pipelines
+
+Listing releases matching ^tekton$
+Listing releases matching ^**boot-helmfile-resources$
+Release "**boot-helmfile-resources" has been upgraded. Happy Helming!
+NAME: **boot-helmfile-resources
+LAST DEPLOYED: Mon Apr 27 08:47:26 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 13
+TEST SUITE: None
+
+lighthouse	**       	13      	2020-04-27 08:47:25.830985798 +0000 UTC	deployed	lighthouse-0.0.493	0.0.493    
+
+tekton	**       	13      	2020-04-27 08:47:26.431717076 +0000 UTC	deployed	tekton-0.0.51	           
+
+**boot-helmfile-resources	**       	13      	2020-04-27 08:47:26.412708035 +0000 UTC	deployed	**boot-helmfile-resources-0.0.155	           
+
+Release "v2-nodey2" does not exist. Installing it now.
+NAME: v2-nodey2
+LAST DEPLOYED: Mon Apr 27 08:47:22 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 1
+Listing releases matching ^v2-nodey2$
+TEST SUITE: None
+NOTES:
+Get the application URL by running these commands:
+
+kubectl get ingress v2-nodey2-v2-nodey2
+
+v2-nodey2	**       	1       	2020-04-27 08:47:22.59249089 +0000 UTC	deployed	v2-nodey2-0.0.16	0.0.16     
+
+
+UPDATED RELEASES:
+NAME                        CHART                                 VERSION
+lighthouse                  jenkins-x/lighthouse                  0.0.493
+tekton                      jenkins-x/tekton                       0.0.51
+**boot-helmfile-resources   jenkins-x/**boot-helmfile-resources   0.0.155
+v2-nodey2                   dev/v2-nodey2                          0.0.16
+
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-zhr25-7[0m stage [32mrelease[0m and container [32mstep-git-creds[0m
+Generated Git credentials file /builder/home/git/credentials
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-zhr25-7[0m stage [32mrelease[0m and container [32mstep-verify-jenkins-x-environment[0m
+Storing the requirements in team settings in the dev environment
+Environment git repositories look good
+
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-zhr25-7[0m stage [32mrelease[0m and container [32mstep-install-pipelines[0m
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-zhr25-7[0m stage [32mrelease[0m and container [32mstep-verify-dns[0m
+Checking DNS resolution for chartmuseum-**.34.76.102.116.nip.io
+chartmuseum-**.34.76.102.116.nip.io resolved
+Checking DNS resolution for hook-**.34.76.102.116.nip.io
+hook-**.34.76.102.116.nip.io resolved
+Checking DNS resolution for nexus-**.34.76.102.116.nip.io
+nexus-**.34.76.102.116.nip.io resolved
+Checking DNS resolution for v2-nodey2-**.34.76.102.116.nip.io
+v2-nodey2-**.34.76.102.116.nip.io resolved
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-zhr25-7[0m stage [32mrelease[0m and container [32mstep-update-webhooks[0m
+DEBUG: Finding service url for hook in namespace **
+DEBUG: Couldn't find service url, attempting to look up via ingress
+DEBUG: found service url http://hook-**.34.76.102.116.nip.io
+Updating webhooks for Owner: cb-kubecd and Repository: environment-bootv3-stage-saas in git server: https://github.com
+Checking hooks for repository cb-kubecd/environment-bootv3-stage-saas with user ******************
+Found matching hook for url http://hook-**.34.76.102.116.nip.io/hook
+Updating GitHub webhook for cb-kubecd/environment-bootv3-stage-saas for url http://hook-**.34.76.102.116.nip.io/hook
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-zhr25-7[0m stage [32mrelease[0m and container [32mstep-verify-installation[0m
+verifying the Jenkins X installation in namespace **
+verifying pods
+Checking pod statuses
+POD                                                        STATUS
+**boot-helmfile-resources-controllerbuild-7fd45857c5-q4x6m Running
+**boot-helmfile-resources-controllerrole-7cbc5bcc6-p4gpv   Running
+**boot-helmfile-resources-gcactivities-1587967200-wcm75    Succeeded
+**boot-helmfile-resources-gcactivities-1587969000-gq2cb    Succeeded
+**boot-helmfile-resources-gcpods-1587967200-lgrk2          Succeeded
+**boot-helmfile-resources-gcpods-1587969000-2gxxv          Succeeded
+**boot-helmfile-resources-gcpreviews-1587967200-7j757      Succeeded
+lighthouse-lighthouse-75dbc9ccc8-dv5nj                     Running
+lighthouse-lighthouse-75dbc9ccc8-kvwzq                     Running
+tekton-pipelines-controller-666488cbd5-hkhqx               Running
+tide-5f89c84c58-mn4bn                                      Running
+v2-nodey2-v2-nodey2-7b8d88ffbd-tbkln                       Running
+Verifying the git config
+Verifying username ****************** at git server github at https://github.com
+Found 5 organisations in git server https://github.com: cb-kubecd, cloudbees, jenkins-x, jenkins-x-labs, jenkins-x-labs-bdd-tests
+Validated pipeline user ****************** on git server https://github.com
+Git tokens seem to be setup correctly
+Installation is currently looking: GOOD
