@@ -1,0 +1,111 @@
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-wmcgb-1[0m stage [32mpr-checks[0m and container [32mstep-credential-initializer-gs4g7[0m
+{"level":"warn","ts":1587982215.2436802,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1587982215.2441998,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-wmcgb-1[0m stage [32mpr-checks[0m and container [32mstep-working-dir-initializer-tsc8z[0m
+{"level":"warn","ts":1587982216.2119544,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1587982216.213227,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-wmcgb-1[0m stage [32mpr-checks[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-wmcgb-1[0m stage [32mpr-checks[0m and container [32mstep-git-source-cb-kubecd-environment-bootv3-st-wmcgb-bf2z4[0m
+{"level":"warn","ts":1587982222.2994869,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1587982223.4669018,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/environment-bootv3-stage-saas.git @ master in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-wmcgb-1[0m stage [32mpr-checks[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:70d4e3edd4fd5c368bf1fcf3c0d41b8c8e499f19,11:f83acd9d527274b5b93b35ac8d0cebf320bcf370
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git fetch origin --unshallow f83acd9d527274b5b93b35ac8d0cebf320bcf370: 70d4e3edd4fd5c368bf1fcf3c0d41b8c8e499f19:
+DEBUG: ran git fetch --unshallow origin f83acd9d527274b5b93b35ac8d0cebf320bcf370: 70d4e3edd4fd5c368bf1fcf3c0d41b8c8e499f19: in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git branch
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git checkout master
+DEBUG: ran git checkout master in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git reset --hard 70d4e3edd4fd5c368bf1fcf3c0d41b8c8e499f19
+DEBUG: ran git reset --hard 70d4e3edd4fd5c368bf1fcf3c0d41b8c8e499f19 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git clean -fd .
+DEBUG: ran clean --force -d . in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git merge f83acd9d527274b5b93b35ac8d0cebf320bcf370
+DEBUG: ran git merge f83acd9d527274b5b93b35ac8d0cebf320bcf370 in 
+DEBUG: LC_ALL=C JX_LOG_LEVEL=error git log --format=%H%x1f%an%x1f%ae%x1f%cn%x1f%ce%x1f%s%n%b%x1e 70d4e3edd4fd5c368bf1fcf3c0d41b8c8e499f19..HEAD
+Merged SHA f83acd9d527274b5b93b35ac8d0cebf320bcf370 with commit message 'chore: Promote v2-nodey2 to version 0.0.18' into base branch master
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-wmcgb-1[0m stage [32mpr-checks[0m and container [32mstep-verify-secrets[0m
+Installing plugin helm version 3.2.0 for command ** helm from https://get.helm.sh/helm-v3.2.0-linux-amd64.tar.gz
+created directory /secrets/**-boot
+loaded Secrets from: Google Secret Manager for secret bootv3-stage-saas-boot-secret
+exported Secrets to file: /secrets/**-boot/secrets.yaml
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-wmcgb-1[0m stage [32mpr-checks[0m and container [32mstep-create-helmfile[0m
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-wmcgb-1[0m stage [32mpr-checks[0m and container [32mstep-lint-helmfile-system[0m
+Adding repo dev http://bucketrepo-**.cb**-mustangvine.staging-**aas.live/bucketrepo/charts/
+"dev" has been added to your repositories
+
+Adding repo **-labs gs://jenkinsxio-labs-private/charts
+"**-labs" has been added to your repositories
+
+Adding repo stable https://kubernetes-charts.storage.googleapis.com
+"stable" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "**-labs" chart repository
+...Successfully got an update from the "dev" chart repository
+...Successfully got an update from the "stable" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Fetching **-labs/jenkins-x-crds
+Fetching stable/nginx-ingress
+Linting release=jenkins-x-crds, chart=/tmp/166698644/jenkins-x-crds/0.0.1/**-labs/jenkins-x-crds/jenkins-x-crds
+==> Linting /tmp/166698644/jenkins-x-crds/0.0.1/**-labs/jenkins-x-crds/jenkins-x-crds
+
+1 chart(s) linted, 0 chart(s) failed
+
+Linting release=nginx-ingress, chart=/tmp/166698644/nginx-ingress/1.34.2/stable/nginx-ingress/nginx-ingress
+==> Linting /tmp/166698644/nginx-ingress/1.34.2/stable/nginx-ingress/nginx-ingress
+
+1 chart(s) linted, 0 chart(s) failed
+
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-wmcgb-1[0m stage [32mpr-checks[0m and container [32mstep-lint-helmfile-apps[0m
+Adding repo dev http://bucketrepo-**.cb**-mustangvine.staging-**aas.live/bucketrepo/charts/
+"dev" has been added to your repositories
+
+Adding repo jenkins-x https://storage.googleapis.com/chartmuseum.jenkins-x.io
+"jenkins-x" has been added to your repositories
+
+Adding repo jenkins-x http://chartmuseum.jenkins-x.io
+"jenkins-x" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "dev" chart repository
+...Successfully got an update from the "**-labs" chart repository
+...Successfully got an update from the "jenkins-x" chart repository
+...Successfully got an update from the "stable" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Fetching jenkins-x/**boot-helmfile-resources
+Fetching jenkins-x/tekton
+Fetching dev/v2-nodey2
+Fetching jenkins-x/lighthouse
+Linting release=**boot-helmfile-resources, chart=/tmp/912398392/**boot-helmfile-resources/0.0.155/jenkins-x/**boot-helmfile-resources/**boot-helmfile-resources
+==> Linting /tmp/912398392/**boot-helmfile-resources/0.0.155/jenkins-x/**boot-helmfile-resources/**boot-helmfile-resources
+
+1 chart(s) linted, 0 chart(s) failed
+
+Linting release=lighthouse, chart=/tmp/912398392/lighthouse/0.0.493/jenkins-x/lighthouse/lighthouse
+==> Linting /tmp/912398392/lighthouse/0.0.493/jenkins-x/lighthouse/lighthouse
+
+1 chart(s) linted, 0 chart(s) failed
+
+Linting release=tekton, chart=/tmp/912398392/tekton/0.0.51/jenkins-x/tekton/tekton
+==> Linting /tmp/912398392/tekton/0.0.51/jenkins-x/tekton/tekton
+
+1 chart(s) linted, 0 chart(s) failed
+
+Linting release=v2-nodey2, chart=/tmp/912398392/v2-nodey2/0.0.18/dev/v2-nodey2/v2-nodey2
+==> Linting /tmp/912398392/v2-nodey2/0.0.18/dev/v2-nodey2/v2-nodey2
+
+1 chart(s) linted, 0 chart(s) failed
+
