@@ -1,7 +1,7 @@
 autoUpdate:
   enabled: false
   schedule: ""
-buildPackRef: 0.0.6
+buildPackRef: 0.0.10
 buildPackURL: https://github.com/jenkins-x/jxr-packs-kubernetes.git
 cluster:
   clusterName: bootv3-stage-saas
@@ -61,6 +61,6 @@ velero:
   schedule: ""
   ttl: ""
 versionStream:
-  ref: v0.0.22
+  ref: v0.0.32
   url: "https://github.com/jenkins-x/jxr-versions"
 webhook: lighthouse
