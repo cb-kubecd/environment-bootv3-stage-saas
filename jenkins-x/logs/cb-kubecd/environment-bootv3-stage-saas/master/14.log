@@ -1,0 +1,2057 @@
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-5bqm8-14[0m stage [32mrelease[0m and container [32mstep-credential-initializer-64jps[0m
+{"level":"warn","ts":1588134467.5956373,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1588134467.5962632,"logger":"fallback-logger","caller":"creds-init/main.go:40","msg":"Credentials initialized."}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-5bqm8-14[0m stage [32mrelease[0m and container [32mstep-working-dir-initializer-ms52x[0m
+{"level":"warn","ts":1588134468.9002964,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: open /var/run/ko/HEAD: no such file or directory"}
+{"level":"info","ts":1588134468.901563,"logger":"fallback-logger","caller":"bash/main.go:64","msg":"Successfully executed command \"sh -c mkdir -p /workspace/source\"; output "}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-5bqm8-14[0m stage [32mrelease[0m and container [32mstep-place-tools[0m
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-5bqm8-14[0m stage [32mrelease[0m and container [32mstep-git-source-cb-kubecd-environment-bootv3-st-5bqm8-jbh2j[0m
+{"level":"warn","ts":1588134476.983461,"logger":"fallback-logger","caller":"logging/config.go:69","msg":"Fetch GitHub commit ID from kodata failed: \"ref: refs/heads/0.8.0-**-support-backwards-incompats\" is not a valid GitHub commit ID"}
+{"level":"info","ts":1588134478.0250628,"logger":"fallback-logger","caller":"git/git.go:103","msg":"Successfully cloned https://github.com/cb-kubecd/environment-bootv3-stage-saas.git @ v0.0.14 in path /workspace/source"}
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-5bqm8-14[0m stage [32mrelease[0m and container [32mstep-git-merge[0m
+Using SHAs from PULL_REFS=master:90602b28cc9abe7ce4d4a4e1967c18b4e20e7acf
+WARNING: no SHAs to merge, falling back to initial cloned commit
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-5bqm8-14[0m stage [32mrelease[0m and container [32mstep-verify-secrets[0m
+Installing plugin helm version 3.2.0 for command ** helm from https://get.helm.sh/helm-v3.2.0-linux-amd64.tar.gz
+created directory /secrets/**-boot
+loaded Secrets from: Google Secret Manager for secret bootv3-stage-saas-boot-secret
+exported Secrets to file: /secrets/**-boot/secrets.yaml
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-5bqm8-14[0m stage [32mrelease[0m and container [32mstep-validate-git[0m
+Git configured for user: jenkins-x-bot and email jenkins-x@googlegroups.com
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-5bqm8-14[0m stage [32mrelease[0m and container [32mstep-verify-preinstall[0m
+no need to reconnect to cluster
+writing the following to the OWNERS file for the development environment repository:
+approvers:
+- jstrachan
+reviewers:
+- jstrachan
+WARNING: TLS is not enabled so your webhooks will be called using HTTP. This means your webhook secret will be sent to your cluster in the clear. See https://jenkins-x.io/docs/getting-started/setup/boot/#ingress for more information
+Verifying the kubernetes cluster before we try to boot Jenkins X in namespace: **
+Trying to lazily create any missing resources to get the current cluster ready to boot Jenkins X
+Verifying Ingress...
+
+Using namespace '**' from context named '' on server ''.
+
+Verifying Storage...
+WARNING: Your requirements have not enabled cloud storage for logs - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for reports - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for repository - we recommend enabling this for kubernetes provider gke
+WARNING: Your requirements have not enabled cloud storage for backup - we recommend enabling this for kubernetes provider gke
+Storage configuration looks good
+
+verified there is a ConfigMap config in namespace **
+verified there is a ConfigMap plugins in namespace **
+Cluster looks good, you are ready to '** boot' now!
+
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-5bqm8-14[0m stage [32mrelease[0m and container [32mstep-generate-helmfile[0m
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-5bqm8-14[0m stage [32mrelease[0m and container [32mstep-helmfile-system-diff[0m
+Adding repo dev http://bucketrepo-**.cb**-mustangvine.staging-**aas.live/bucketrepo/charts/
+"dev" has been added to your repositories
+
+Adding repo **-labs gs://jenkinsxio-labs-private/charts
+"**-labs" has been added to your repositories
+
+Adding repo stable https://kubernetes-charts.storage.googleapis.com
+"stable" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "dev" chart repository
+...Successfully got an update from the "**-labs" chart repository
+...Successfully got an update from the "stable" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Comparing release=jenkins-x-crds, chart=**-labs/jenkins-x-crds
+Comparing release=nginx-ingress, chart=stable/nginx-ingress
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-5bqm8-14[0m stage [32mrelease[0m and container [32mstep-helmfile-system[0m
+Adding repo dev http://bucketrepo-**.cb**-mustangvine.staging-**aas.live/bucketrepo/charts/
+"dev" has been added to your repositories
+
+Adding repo **-labs gs://jenkinsxio-labs-private/charts
+"**-labs" has been added to your repositories
+
+Adding repo stable https://kubernetes-charts.storage.googleapis.com
+"stable" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "dev" chart repository
+...Successfully got an update from the "**-labs" chart repository
+...Successfully got an update from the "stable" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Affected releases are:
+  jenkins-x-crds (**-labs/jenkins-x-crds) UPDATED
+  nginx-ingress (stable/nginx-ingress) UPDATED
+
+Upgrading release=nginx-ingress, chart=stable/nginx-ingress
+Upgrading release=jenkins-x-crds, chart=**-labs/jenkins-x-crds
+Release "nginx-ingress" has been upgraded. Happy Helming!
+NAME: nginx-ingress
+LAST DEPLOYED: Wed Apr 29 04:28:32 2020
+NAMESPACE: nginx
+STATUS: deployed
+REVISION: 32
+TEST SUITE: None
+NOTES:
+The nginx-ingress controller has been installed.
+It may take a few minutes for the LoadBalancer IP to be available.
+You can watch the status by running 'kubectl --namespace nginx get services -o wide -w nginx-ingress-controller'
+
+An example Ingress that makes use of the controller:
+
+  apiVersion: extensions/v1beta1
+  kind: Ingress
+  metadata:
+    annotations:
+      kubernetes.io/ingress.class: nginx
+    name: example
+    namespace: foo
+  spec:
+    rules:
+      - host: www.example.com
+        http:
+          paths:
+            - backend:
+                serviceName: exampleService
+                servicePort: 80
+              path: /
+    # This section is only required if TLS is to be enabled for the Ingress
+    tls:
+        - hosts:
+            - www.example.com
+          secretName: example-tls
+
+If TLS is enabled for the Ingress, a Secret containing the certificate and key must also be provided:
+
+  apiVersion: v1
+  kind: Secret
+  metadata:
+    name: example-tls
+    namespace: foo
+  data:
+    tls.crt: <base64 encoded cert>
+    tls.key: <base64 encoded key>
+  type: kubernetes.io/tls
+
+Listing releases matching ^nginx-ingress$
+nginx-ingress	nginx    	32      	2020-04-29 04:28:32.216287678 +0000 UTC	deployed	nginx-ingress-1.34.2	0.30.0     
+
+Release "jenkins-x-crds" has been upgraded. Happy Helming!
+NAME: jenkins-x-crds
+LAST DEPLOYED: Wed Apr 29 04:28:35 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 21
+TEST SUITE: None
+
+Listing releases matching ^jenkins-x-crds$
+jenkins-x-crds	**       	21      	2020-04-29 04:28:35.23934605 +0000 UTC	deployed	jenkins-x-crds-0.0.1	0.0.1      
+
+
+UPDATED RELEASES:
+NAME             CHART                    VERSION
+nginx-ingress    stable/nginx-ingress      1.34.2
+jenkins-x-crds   **-labs/jenkins-x-crds     0.0.1
+
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-5bqm8-14[0m stage [32mrelease[0m and container [32mstep-verify-ingress[0m
+Waiting to find the external host name of the ingress controller Service in namespace nginx with name nginx-ingress-controller
+No domain flag provided so using default 34.76.102.116.nip.io to generate Ingress rules
+defaulting the domain to 34.76.102.116.nip.io and modified /workspace/source/**-requirements.yml
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-5bqm8-14[0m stage [32mrelease[0m and container [32mstep-helm-label-repositories[0m
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-5bqm8-14[0m stage [32mrelease[0m and container [32mstep-helmfile-apps-diff[0m
+Adding repo dev http://bucketrepo-**.cb**-mustangvine.staging-**aas.live/bucketrepo/charts/
+"dev" has been added to your repositories
+
+Adding repo jenkins-x https://storage.googleapis.com/chartmuseum.jenkins-x.io
+"jenkins-x" has been added to your repositories
+
+Adding repo jenkins-x http://chartmuseum.jenkins-x.io
+"jenkins-x" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "dev" chart repository
+...Successfully got an update from the "**-labs" chart repository
+...Successfully got an update from the "jenkins-x" chart repository
+...Successfully got an update from the "stable" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Comparing release=lighthouse, chart=jenkins-x/lighthouse
+Comparing release=tekton, chart=jenkins-x/tekton
+Comparing release=**boot-helmfile-resources, chart=jenkins-x/**boot-helmfile-resources
+Comparing release=v2-nodey2, chart=dev/v2-nodey2
+[33m**, jenkins-x-pod-template-scala, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-scala"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-scala
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 5005, 8080
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        - name: volume-0
+          secret:
+            secretName: jenkins-maven-settings
+        - name: volume-1
+          secret:
+            secretName: jenkins-release-gpg
+        containers:
+        - name: scala
+[31m-         image: gcr.io/jenkinsxio/builder-scala:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-scala:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          - name: _JAVA_OPTIONS
+            value: -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms10m -Xmx192m
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+            - name: volume-0
+              mountPath: /root/.m2/
+            - name: volume-1
+              mountPath: /home/jenkins/.gnupg
+[33m**, jenkins-x-pod-template-maven-graalvm, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-maven-graalvm"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-maven-graalvm
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 5005, 8080
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        - name: volume-0
+          secret:
+            secretName: jenkins-maven-settings
+        - name: volume-1
+          secret:
+            secretName: jenkins-release-gpg
+        containers:
+        - name: maven
+[31m-         image: gcr.io/jenkinsxio/builder-maven-graalvm:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-maven-graalvm:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: MAVEN_OPTS
+            value: -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          - name: _JAVA_OPTIONS
+            value: -XX:+UnlockExperimentalVMOptions -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms10m -Xmx1800m
+          resources:
+            requests:
+              cpu: 400m
+              memory: 2Gi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+            - name: volume-0
+              mountPath: /root/.m2/
+            - name: volume-1
+              mountPath: /home/jenkins/.gnupg
+[33m**, jenkins-x-pod-template-maven-nodejs, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-maven-nodejs"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-maven-nodejs
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 9229, 3000, 8080, 5005
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        - name: volume-0
+          secret:
+            secretName: jenkins-maven-settings
+        - name: volume-1
+          secret:
+            secretName: jenkins-release-gpg
+        containers:
+        - name: mavennodejs
+[31m-         image: gcr.io/jenkinsxio/builder-maven-nodejs:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-maven-nodejs:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          - name: _JAVA_OPTIONS
+            value: -XX:+UnlockExperimentalVMOptions -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms10m -Xmx192m
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+            - name: volume-0
+              mountPath: /root/.m2/
+            - name: volume-1
+              mountPath: /home/jenkins/.gnupg
+[33m**, jenkins-x-pod-template-nodejs, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-nodejs"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-nodejs
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 9229, 3000, 8080
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        containers:
+        - name: nodejs
+[31m-         image: gcr.io/jenkinsxio/builder-nodejs:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-nodejs:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+[33m**, jenkins-x-pod-template-promote, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-promote"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-promote
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        containers:
+        - name: promote
+[31m-         image: gcr.io/jenkinsxio/builder-**:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-**:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          resources:
+            requests:
+              cpu: 200m
+              memory: 100Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+[33m**, jenkins-x-pod-template-rust, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-rust"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-rust
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 8080
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        containers:
+        - name: rust
+[31m-         image: gcr.io/jenkinsxio/builder-rust:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-rust:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+[33m**, jenkins-x-pod-template-machine-learning, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-machine-learning"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-machine-learning
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 3000, 8000
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        containers:
+        - name: machine-learning
+[31m-         image: gcr.io/jenkinsxio/builder-machine-learning:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-machine-learning:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          resources:
+            requests:
+              cpu: 2000m
+              memory: 4Gi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+[33m**, jenkins-x-pod-template-terraform, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-terraform"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-terraform
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        containers:
+        - name: terraform
+[31m-         image: gcr.io/jenkinsxio/builder-terraform:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-terraform:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          resources:
+            requests:
+              cpu: 400m
+              memory: 600Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+[33m**, jenkins-x-pod-template-php7x, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-php7x"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-php7x
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 9229, 3000, 8080
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        containers:
+        - name: nodejs
+[31m-         image: gcr.io/jenkinsxio/builder-php7x:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-php7x:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+[33m**, jenkins-x-pod-template-maven, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-maven"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-maven
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 5005, 8080
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        - name: volume-0
+          secret:
+            secretName: jenkins-maven-settings
+        - name: volume-1
+          secret:
+            secretName: jenkins-release-gpg
+        containers:
+        - name: maven
+[31m-         image: gcr.io/jenkinsxio/builder-maven:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-maven:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: MAVEN_OPTS
+            value: -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          - name: _JAVA_OPTIONS
+            value: -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms10m -Xmx192m
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+            - name: volume-0
+              mountPath: /root/.m2/
+            - name: volume-1
+              mountPath: /home/jenkins/.gnupg
+[33m**, jenkins-x-pod-template-swift, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-swift"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-swift
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 8080
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        containers:
+        - name: swift
+[31m-         image: gcr.io/jenkinsxio/builder-swift:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-swift:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+[33m**, jenkins-x-pod-template-python2, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-python2"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-python2
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 3000, 8000
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        containers:
+        - name: python
+[31m-         image: gcr.io/jenkinsxio/builder-python2:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-python2:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+[33m**, jenkins-x-pod-template-php5x, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-php5x"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-php5x
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 9229, 3000, 8080
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        containers:
+        - name: nodejs
+[31m-         image: gcr.io/jenkinsxio/builder-php5x:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-php5x:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+[33m**, jenkins-x-pod-template-python, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-python"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-python
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 3000, 8000
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        containers:
+        - name: python
+[31m-         image: gcr.io/jenkinsxio/builder-python:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-python:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+[33m**, jenkins-x-pod-template-maven-java11, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-maven-java11"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-maven-java11
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 5005, 8080
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        - name: volume-0
+          secret:
+            secretName: jenkins-maven-settings
+        - name: volume-1
+          secret:
+            secretName: jenkins-release-gpg
+        containers:
+        - name: maven
+[31m-         image: gcr.io/jenkinsxio/builder-maven-java11:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-maven-java11:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: MAVEN_OPTS
+            value: -Dorg.slf4j.simpleLogger.log.org.apache.maven.cli.transfer.Slf4jMavenTransferListener=warn
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          - name: _JAVA_OPTIONS
+            value: -XX:+UnlockExperimentalVMOptions -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms10m -Xmx192m
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+            - name: volume-0
+              mountPath: /root/.m2/
+            - name: volume-1
+              mountPath: /home/jenkins/.gnupg
+[33m**, jenkins-x-pod-template-nodejs10x, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-nodejs10x"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-nodejs10x
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 9229, 3000, 8080
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        containers:
+        - name: nodejs
+[31m-         image: gcr.io/jenkinsxio/builder-nodejs10x:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-nodejs10x:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+[33m**, jenkins-x-pod-template-nodejs12x, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-nodejs12x"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-nodejs12x
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 9229, 3000, 8080
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        containers:
+        - name: nodejs
+[31m-         image: gcr.io/jenkinsxio/builder-nodejs12x:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-nodejs12x:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+[33m**, jenkins-x-pod-template-aws-cdk, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-aws-cdk"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-aws-cdk
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 9229, 3000, 8080, 5005
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        - name: volume-0
+          secret:
+            secretName: jenkins-maven-settings
+        - name: volume-1
+          secret:
+            secretName: jenkins-release-gpg
+        containers:
+        - name: aws-cdk
+[31m-         image: gcr.io/jenkinsxio/builder-maven-nodejs:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-maven-nodejs:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          - name: _JAVA_OPTIONS
+            value: -XX:+UnlockExperimentalVMOptions -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms10m -Xmx512m
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+            - name: volume-0
+              mountPath: /root/.m2/
+            - name: volume-1
+              mountPath: /home/jenkins/.gnupg
+[33m**, dev, Environment (jenkins.io) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/environments.yaml
+  apiVersion: jenkins.io/v1
+  kind: Environment
+  metadata:
+    labels:
+      env: "dev"
+      team: **
+    name: "dev"
+  spec:
+    source:
+      ref: "master"
+      url: https://github.com/cb-kubecd/environment-bootv3-stage-saas.git
+    kind: Development
+    label: Development
+    namespace: **
+    promotionStrategy: Never
+    webHookEngine: "Lighthouse"
+    teamSettings:
+      appsRepository: http://chartmuseum.jenkins-x.io
+[31m-     buildPackRef: "0.0.6"[0m
+[32m+     buildPackRef: "0.0.10"[0m
+      buildPackUrl: "https://github.com/jenkins-x/**r-packs-kubernetes.git"
+      defaultScheduler:
+        apiVersion: jenkins.io/v1
+        kind: Scheduler
+        name: default
+      dockerRegistryOrg: "jstrachan-multicluster"
+      envOrganisation: cb-kubecd
+      gitServer: https://github.com
+      gitPublic: true
+      helmTemplate: true
+      kubeProvider: "gke"
+      pipelineUsername: "******************"
+      pipelineUserEmail: "jenkins-x@googlegroups.com"
+      prowConfig: Scheduler
+      importMode: YAML
+      promotionEngine: Prow
+      prowEngine: Tekton
+      versionStreamUrl: "https://github.com/jenkins-x/**r-versions"
+[31m-     versionStreamRef: "v0.0.22"[0m
+[32m+     versionStreamRef: "v0.0.32"[0m
+      useGitOps: true
+    remoteCluster: true
+[33m**, jenkins-x-pod-template-**-base, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-**-base"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-**-base
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        containers:
+        - name: **-base
+[31m-         image: gcr.io/jenkinsxio/builder-**:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-**:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          resources:
+            requests:
+              cpu: 200m
+              memory: 256Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+[33m**, jenkins-x-pod-template-python37, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-python37"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-python37
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 3000, 8000
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        containers:
+        - name: python
+[31m-         image: gcr.io/jenkinsxio/builder-python37:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-python37:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+[33m**, jenkins-x-pod-template-dlang, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-dlang"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-dlang
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 8080
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        containers:
+        - name: dlang
+[31m-         image: gcr.io/jenkinsxio/builder-dlang:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-dlang:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          resources:
+            requests:
+              cpu: 500m
+              memory: 1024Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+[33m**, jenkins-x-pod-template-nodejs8x, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-nodejs8x"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-nodejs8x
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 9229, 3000, 8080
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        containers:
+        - name: nodejs
+[31m-         image: gcr.io/jenkinsxio/builder-nodejs8x:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-nodejs8x:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+[33m**, jenkins-x-pod-template-newman, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-newman"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-newman
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 9229, 3000
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        containers:
+        - name: newman
+[31m-         image: gcr.io/jenkinsxio/builder-newman:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-newman:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+[33m**, jenkins-x-pod-template-gradle, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-gradle"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-gradle
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 5005, 8080
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        - name: volume-0
+          secret:
+            secretName: jenkins-release-gpg
+        containers:
+        - name: gradle
+[31m-         image: gcr.io/jenkinsxio/builder-gradle:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-gradle:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          - name: _JAVA_OPTIONS
+            value: -XX:+UnlockExperimentalVMOptions -XX:+UseCGroupMemoryLimitForHeap -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms10m -Xmx192m
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+            - name: volume-0
+              mountPath: /home/jenkins/.gnupg
+[33m**, jenkins-x-pod-template-machine-learning-gpu, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-machine-learning-gpu"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-machine-learning-gpu
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 3000, 8000
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        containers:
+        - name: machine-learning
+[31m-         image: gcr.io/jenkinsxio/builder-machine-learning-gpu:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-machine-learning-gpu:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          resources:
+            requests:
+              cpu: 1000m
+              memory: 1Gi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+[33m**, jenkins-x-pod-template-ruby, ConfigMap (v1) has changed:[0m
+  # Source: **boot-helmfile-resources/templates/jenkins-x-pod-templates.yaml
+  apiVersion: v1
+  kind: ConfigMap
+  metadata:
+    name: "jenkins-x-pod-template-ruby"
+    labels:
+      jenkins.io/kind: podTemplate
+  data:
+    pod: |-
+      apiVersion: v1
+      kind: Pod
+      metadata:
+        name: jenkins-ruby
+        labels:
+          jenkins.io/kind: build-pod
+        annotations:
+          jenkins-x.io/devpodPorts: 1234, 3000
+      spec:
+        serviceAccount: tekton-sa
+        nodeSelector:
+        volumes:
+        - name: workspace-volume
+          emptyDir: **
+        containers:
+        - name: ruby
+[31m-         image: gcr.io/jenkinsxio/builder-ruby:2.1.4-630[0m
+[32m+         image: gcr.io/jenkinsxio/builder-ruby:2.1.12-639[0m
+          args:
+          - cat
+          command:
+          - /bin/sh
+          - -c
+          workingDir: /home/jenkins
+          securityContext:
+            privileged: true
+          tty: true
+          env:
+          - name: DOCKER_REGISTRY
+            valueFrom:
+              configMapKeyRef:
+                name: jenkins-x-docker-registry
+                key: docker.registry
+          - name: GIT_AUTHOR_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_AUTHOR_NAME
+            value: jenkins-x-bot
+          - name: GIT_COMMITTER_EMAIL
+            value: jenkins-x@googlegroups.com
+          - name: GIT_COMMITTER_NAME
+            value: jenkins-x-bot
+          - name: XDG_CONFIG_HOME
+            value: /home/jenkins
+          resources:
+            requests:
+              cpu: 400m
+              memory: 512Mi
+            limits:
+          volumeMounts:
+            - mountPath: /home/jenkins
+              name: workspace-volume
+
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-5bqm8-14[0m stage [32mrelease[0m and container [32mstep-helmfile-apps[0m
+Adding repo dev http://bucketrepo-**.cb**-mustangvine.staging-**aas.live/bucketrepo/charts/
+"dev" has been added to your repositories
+
+Adding repo jenkins-x https://storage.googleapis.com/chartmuseum.jenkins-x.io
+"jenkins-x" has been added to your repositories
+
+Adding repo jenkins-x http://chartmuseum.jenkins-x.io
+"jenkins-x" has been added to your repositories
+
+Updating repo
+Hang tight while we grab the latest from your chart repositories...
+...Successfully got an update from the "**-labs" chart repository
+...Successfully got an update from the "dev" chart repository
+...Successfully got an update from the "jenkins-x" chart repository
+...Successfully got an update from the "stable" chart repository
+Update Complete. ⎈ Happy Helming!⎈ 
+
+Affected releases are:
+  **boot-helmfile-resources (jenkins-x/**boot-helmfile-resources) UPDATED
+  lighthouse (jenkins-x/lighthouse) UPDATED
+  tekton (jenkins-x/tekton) UPDATED
+  v2-nodey2 (dev/v2-nodey2) UPDATED
+
+Upgrading release=**boot-helmfile-resources, chart=jenkins-x/**boot-helmfile-resources
+Upgrading release=lighthouse, chart=jenkins-x/lighthouse
+Upgrading release=tekton, chart=jenkins-x/tekton
+Upgrading release=v2-nodey2, chart=dev/v2-nodey2
+Release "v2-nodey2" has been upgraded. Happy Helming!
+NAME: v2-nodey2
+LAST DEPLOYED: Wed Apr 29 04:29:12 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 2
+TEST SUITE: None
+NOTES:
+Get the application URL by running these commands:
+
+kubectl get ingress v2-nodey2-v2-nodey2
+
+Listing releases matching ^v2-nodey2$
+v2-nodey2	**       	2       	2020-04-29 04:29:12.839477538 +0000 UTC	deployed	v2-nodey2-0.0.18	0.0.18     
+
+Release "lighthouse" has been upgraded. Happy Helming!
+NAME: lighthouse
+LAST DEPLOYED: Wed Apr 29 04:29:17 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 20
+TEST SUITE: None
+NOTES:
+Get the application URL by running these commands:
+
+kubectl get ingress lighthouse-lighthouse
+
+Listing releases matching ^lighthouse$
+Release "tekton" has been upgraded. Happy Helming!
+NAME: tekton
+LAST DEPLOYED: Wed Apr 29 04:29:15 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 20
+TEST SUITE: None
+NOTES:
+Tekton Pipelines
+
+Listing releases matching ^tekton$
+Listing releases matching ^**boot-helmfile-resources$
+Release "**boot-helmfile-resources" has been upgraded. Happy Helming!
+NAME: **boot-helmfile-resources
+LAST DEPLOYED: Wed Apr 29 04:29:15 2020
+NAMESPACE: **
+STATUS: deployed
+REVISION: 20
+TEST SUITE: None
+
+lighthouse	**       	20      	2020-04-29 04:29:17.235056864 +0000 UTC	deployed	lighthouse-0.0.493	0.0.493    
+
+tekton	**       	20      	2020-04-29 04:29:15.752797034 +0000 UTC	deployed	tekton-0.0.51	           
+
+**boot-helmfile-resources	**       	20      	2020-04-29 04:29:15.736248901 +0000 UTC	deployed	**boot-helmfile-resources-0.0.165	           
+
+
+UPDATED RELEASES:
+NAME                        CHART                                 VERSION
+v2-nodey2                   dev/v2-nodey2                          0.0.18
+lighthouse                  jenkins-x/lighthouse                  0.0.493
+tekton                      jenkins-x/tekton                       0.0.51
+**boot-helmfile-resources   jenkins-x/**boot-helmfile-resources   0.0.165
+
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-5bqm8-14[0m stage [32mrelease[0m and container [32mstep-git-creds[0m
+Generated Git credentials file /builder/home/git/credentials
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-5bqm8-14[0m stage [32mrelease[0m and container [32mstep-verify-jenkins-x-environment[0m
+Storing the requirements in team settings in the dev environment
+Environment git repositories look good
+
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-5bqm8-14[0m stage [32mrelease[0m and container [32mstep-install-pipelines[0m
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-5bqm8-14[0m stage [32mrelease[0m and container [32mstep-verify-dns[0m
+Checking DNS resolution for chartmuseum-**.34.76.102.116.nip.io
+chartmuseum-**.34.76.102.116.nip.io resolved
+Checking DNS resolution for hook-**.34.76.102.116.nip.io
+hook-**.34.76.102.116.nip.io resolved
+Checking DNS resolution for nexus-**.34.76.102.116.nip.io
+nexus-**.34.76.102.116.nip.io resolved
+Checking DNS resolution for v2-nodey2-**.34.76.102.116.nip.io
+v2-nodey2-**.34.76.102.116.nip.io resolved
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-5bqm8-14[0m stage [32mrelease[0m and container [32mstep-update-webhooks[0m
+DEBUG: Finding service url for hook in namespace **
+DEBUG: Couldn't find service url, attempting to look up via ingress
+DEBUG: found service url http://hook-**.34.76.102.116.nip.io
+Updating webhooks for Owner: cb-kubecd and Repository: environment-bootv3-stage-saas in git server: https://github.com
+Checking hooks for repository cb-kubecd/environment-bootv3-stage-saas with user ******************
+Found matching hook for url http://hook-**.34.76.102.116.nip.io/hook
+Updating GitHub webhook for cb-kubecd/environment-bootv3-stage-saas for url http://hook-**.34.76.102.116.nip.io/hook
+
+Showing logs for build [32mcb-kubecd-environment-bootv3-st-5bqm8-14[0m stage [32mrelease[0m and container [32mstep-verify-installation[0m
+verifying the Jenkins X installation in namespace **
+verifying pods
+Checking pod statuses
+POD                                                        STATUS
+**boot-helmfile-resources-controllerbuild-7fd45857c5-q4x6m Running
+**boot-helmfile-resources-controllerrole-7cbc5bcc6-p4gpv   Running
+**boot-helmfile-resources-gcactivities-1588129200-4gctx    Succeeded
+**boot-helmfile-resources-gcactivities-1588131000-rjj54    Succeeded
+**boot-helmfile-resources-gcpods-1588129200-jt57l          Succeeded
+**boot-helmfile-resources-gcpods-1588131000-4b6lc          Succeeded
+**boot-helmfile-resources-gcpreviews-1588129200-dn8d2      Succeeded
+lighthouse-lighthouse-75dbc9ccc8-dv5nj                     Running
+lighthouse-lighthouse-75dbc9ccc8-kvwzq                     Running
+tekton-pipelines-controller-666488cbd5-hkhqx               Running
+tide-5f89c84c58-mn4bn                                      Running
+v2-nodey2-v2-nodey2-c74c8f48b-rmw7s                        Running
+Verifying the git config
+Verifying username ****************** at git server github at https://github.com
+Found 5 organisations in git server https://github.com: cb-kubecd, cloudbees, jenkins-x, jenkins-x-labs, jenkins-x-labs-bdd-tests
+Validated pipeline user ****************** on git server https://github.com
+Git tokens seem to be setup correctly
+Installation is currently looking: GOOD
